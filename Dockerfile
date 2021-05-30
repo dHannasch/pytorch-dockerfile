@@ -16,5 +16,6 @@ RUN set -o allexport \
     && . ./fix_all_gotchas.sh \
     && set +o allexport \
     && python -c "import torchvision.dataset.utils" \
+    && python -c "import torchvision.dataset.utils; print(torchvision.dataset.utils.__file__)" \
     && . ./cleanup.sh
 
