@@ -16,5 +16,5 @@ build_for_gitlab_project_registry:
     DOCKER_BASE_IMAGE_PREFIX: ""
     DOCKER_BASE_IMAGE_NAMESPACE: pytorch
     DOCKER_BASE_IMAGE_NAME: pytorch
-    DOCKER_BASE_IMAGE_TAG: 1.6.0-cuda10.1-cudnn-runtime
+    DOCKER_BASE_IMAGE_TAG: 1.6.0-cuda10.1-cudnn7-runtime
 
