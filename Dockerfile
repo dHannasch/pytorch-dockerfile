@@ -20,6 +20,6 @@ RUN set -o allexport \
     && python -c "import torchvision.datasets" \
     && python -c "import torchvision.datasets.utils" \
     && python -c "import torchvision.datasets.utils; print(torchvision.datasets.utils.__file__)" \
-    && cp torchvision/dataset/utils.py $(python -c "import torchvision.datasets.utils; print(torchvision.datasets.utils.__file__)") \
+    && cp torchvision/datasets/utils.py $(python -c "import torchvision.datasets.utils; print(torchvision.datasets.utils.__file__)") \
     && . ./cleanup.sh
 
