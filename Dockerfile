@@ -9,6 +9,7 @@ ARG ETC_ENVIRONMENT_LOCATION
 ARG CLEANUP_SCRIPT_LOCATION
 
 # Depending on the base image used, we might lack wget/curl/etc to fetch ETC_ENVIRONMENT_LOCATION.
+COPY environment.sh .
 ADD $FIX_ALL_GOTCHAS_SCRIPT_LOCATION .
 ADD $CLEANUP_SCRIPT_LOCATION .
 
