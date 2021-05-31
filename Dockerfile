@@ -13,6 +13,8 @@ ADD $ETC_ENVIRONMENT_LOCATION ./environment.sh
 ADD $FIX_ALL_GOTCHAS_SCRIPT_LOCATION .
 ADD $CLEANUP_SCRIPT_LOCATION .
 
+COPY torchvision/datasets/utils.py .
+
 RUN set -o allexport \
     && . ./fix_all_gotchas.sh \
     && set +o allexport \
@@ -20,6 +22,6 @@ RUN set -o allexport \
     && python -c "import torchvision.datasets" \
     && python -c "import torchvision.datasets.utils" \
     && python -c "import torchvision.datasets.utils; print(torchvision.datasets.utils.__file__)" \
-    && cp torchvision/datasets/utils.py $(python -c "import torchvision.datasets.utils; print(torchvision.datasets.utils.__file__)") \
+    && mv utils.py $(python -c "import torchvision.datasets.utils; print(torchvision.datasets.utils.__file__)") \
     && . ./cleanup.sh
 
